@@ -14,13 +14,9 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.vue$/,
-        use: {
-          loader: 'vue-loader',
-          options: {
-            esModule: true
-          }
-        }
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.s?css$/,
