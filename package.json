@@ -9,12 +9,10 @@
     "build": "webpack --progress --config scripts/webpack.config.prod.js",
     "dev": "webpack-dev-server --stdin --hot --colors --config scripts/webpack.config.dev.js",
     "dev:test": "karma start scripts/karma.conf.js",
-    "watch:test": "webpack --watch --config scripts/webpack.config.test.js",
     "lint": "eslint --ext js,vue src test scripts",
     "lint:fix": "npm run lint -- --fix",
     "test": "npm run lint && npm run test:unit",
-    "test:unit": "karma start scripts/karma.conf.js --single-run",
-    "testem": "testem"
+    "test:unit": "karma start scripts/karma.conf.js --single-run"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
