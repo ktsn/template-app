@@ -1,5 +1,7 @@
 # template-app
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ktsn/template-app.svg)](https://greenkeeper.io/)
+
 A project template for web apps
 
 ## Development Setup
