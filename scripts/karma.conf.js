@@ -2,7 +2,7 @@ const path = require('path')
 const webpackConfig = require('./webpack.config.test')
 
 module.exports = function(config) {
-  config.set({
+  const baseConfig = {
     basePath: path.resolve(__dirname, '../test'),
 
     frameworks: ['mocha'],
@@ -29,5 +29,17 @@ module.exports = function(config) {
     browsers: ['ChromeHeadless'],
     singleRun: false,
     concurrency: Infinity
-  })
+  }
+
+  if (process.env.TRAVIS) {
+    baseConfig.browsers = ['ChromeHeadlessTravis']
+    baseConfig.customLaunchers = {
+      ChromeHeadlessTravis: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    }
+  }
+
+  config.set(baseConfig)
 }
